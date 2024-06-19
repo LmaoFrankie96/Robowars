@@ -9,6 +9,11 @@ public class WebcamScript : MonoBehaviour
 
     public RawImage display;
     public TMP_Text displayText;
+
+    private void Start()
+    {
+        StartStopCam_Clicked();
+    }
     public void SwapCam_Clicked()
     {
 

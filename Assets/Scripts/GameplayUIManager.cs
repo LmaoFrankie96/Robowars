@@ -46,18 +46,18 @@ public class GameplayUIManager : MonoBehaviour
         //StopCoroutine(FillSlider());
         OpenUIScreen(2);
     }
-    public void ShowCapSelectionScreen()
+    public void ShowMatchTypeScreen()
     {
         OpenUIScreen(3);
     }
-    public void ShowAvatarSelectionScreen()
+    /*public void ShowAvatarSelectionScreen()
     {
         OpenUIScreen(4);
-    }
+    }*/
     public void ShowGameplayScreen()
     {
         databaseManager.SetActive(true);
-        OpenUIScreen(5);
+        OpenUIScreen(4);
     }
     private void OnDisable()
     {

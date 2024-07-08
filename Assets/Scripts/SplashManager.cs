@@ -5,9 +5,9 @@ public class SplashManager : MonoBehaviour
     
     private void Update()
     {
-        if (UiManager._instance.uIScreens[2] != null)
+        if (GameplayUIManager._instance.uIScreens[0] != null)
         {
-            if (UiManager._instance.uIScreens[2].activeInHierarchy)
+            if (GameplayUIManager._instance.uIScreens[0].activeInHierarchy)
             {
                 PressAnyKey();
             }
@@ -21,7 +21,8 @@ public class SplashManager : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            UiManager._instance.ShowLoadingScreen();
+            Debug.Log("I am pressed");
+            GameplayUIManager._instance.ShowLoadingScreen();
             this.gameObject.SetActive(false);
         }
     }

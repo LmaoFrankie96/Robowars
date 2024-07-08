@@ -1,11 +1,16 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
     public static UiManager _instance;
-    public GameObject[] uIScreens;
-    public GameObject splashManager;
+    public GameObject loginScreen;
+    public GameObject registerScreen;
+    //public GameObject[] uIScreens;
+    //public GameObject splashManager;
 
+   // public Slider loadingBar;
     private void Awake()
     {
         if (_instance == null)
@@ -23,14 +28,18 @@ public class UiManager : MonoBehaviour
 
     public void ShowLoginScreen()
     {
-        OpenUIScreen(0);
+        loginScreen.SetActive(true);
+        registerScreen.SetActive(false);
+        //OpenUIScreen(0);
 
     }
     public void ShowRegisterScreen()
     {
-        OpenUIScreen(1);
+        loginScreen.SetActive(false);
+        registerScreen.SetActive(true);
+        // OpenUIScreen(1);
     }
-    public void ShowDataScreen()
+ /*   public void ShowDataScreen()
     {
         OpenUIScreen(8);
     }
@@ -42,9 +51,13 @@ public class UiManager : MonoBehaviour
     public void ShowLoadingScreen()
     {
         OpenUIScreen(3);
+        StartCoroutine(FillSlider());
+        ShowMenuScreen();
+
     }
     public void ShowMenuScreen()
     {
+        //StopCoroutine(FillSlider());
         OpenUIScreen(4);
     }
     public void ShowCapSelectionScreen()
@@ -78,4 +91,21 @@ public class UiManager : MonoBehaviour
             }
         }
     }
+    IEnumerator FillSlider()
+    {
+        float duration = 5f; // 2 seconds
+        float startTime = Time.realtimeSinceStartup;
+
+        while (Time.realtimeSinceStartup < startTime + duration)
+        {
+            float elapsed = Time.realtimeSinceStartup - startTime;
+            loadingBar.value = Mathf.Clamp01(elapsed / duration);
+            yield return null;
+        }
+
+        // Ensure the slider is full at the end
+        loadingBar.value = 1f;
+
+        
+    }*/
 }

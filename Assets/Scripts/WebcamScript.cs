@@ -8,7 +8,7 @@ public class WebcamScript : MonoBehaviour
     private int currentCamIndex = 0;
 
     public RawImage display;
-    public TMP_Text displayText;
+    //public TMP_Text displayText;
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class WebcamScript : MonoBehaviour
             if (webCamTex != null)
             {
                 StopCam();
-                displayText.text = "Start Camera";
+               // displayText.text = "Start Camera";
                 StartStopCam_Clicked();
             }
         }
@@ -38,7 +38,7 @@ public class WebcamScript : MonoBehaviour
         if (webCamTex != null)
         {
             StopCam();
-            displayText.text = "Start Camera";
+           // displayText.text = "Start Camera";
         }
 
         else
@@ -47,7 +47,7 @@ public class WebcamScript : MonoBehaviour
             webCamTex = new WebCamTexture(device.name);
             display.texture = webCamTex;
             webCamTex.Play();
-            displayText.text = "Stop Camera";
+           // displayText.text = "Stop Camera";
         }
     }
     private void StopCam()

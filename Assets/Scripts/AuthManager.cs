@@ -37,8 +37,8 @@ public class AuthManager : MonoBehaviour
     private TMP_InputField _nameText;
 
 
-    //  [Space(10)]
-
+  //  [Space(10)]
+   
 
     private void Awake()
     {
@@ -122,11 +122,11 @@ public class AuthManager : MonoBehaviour
 
             Debug.Log("Result.User xxxx " + User.UserId);
             userId_str = User.UserId;
-
+            
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
-            // UiManager._instance.ShowSplashScreen();
+           // UiManager._instance.ShowSplashScreen();
 
             // FOR TESTING 
             SceneManager.LoadSceneAsync(1);
@@ -218,8 +218,7 @@ public class AuthManager : MonoBehaviour
     }
     IEnumerator AddFieldInDb(string field)
     {
-        if (field != null || field != "")
-        {
+        if (field != null || field !="") {
             var dbTask = databaseReference.Child("users").Child(User.UserId).Child("name").SetValueAsync(field);
             yield return new WaitUntil(predicate: () => dbTask.IsCompleted);
             if (dbTask.Exception != null)
@@ -232,5 +231,5 @@ public class AuthManager : MonoBehaviour
             }
         }
     }
-
+   
 }

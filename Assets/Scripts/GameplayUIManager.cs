@@ -48,6 +48,7 @@ public class GameplayUIManager : MonoBehaviour
     }
     public void ShowMatchTypeScreen()
     {
+        Debug.Log("Showing MatchType Screen");
         OpenUIScreen(3);
     }
     /*public void ShowAvatarSelectionScreen()
@@ -56,6 +57,7 @@ public class GameplayUIManager : MonoBehaviour
     }*/
     public void ShowGameplayScreen()
     {
+        
         databaseManager.SetActive(true);
         OpenUIScreen(4);
     }

@@ -6,7 +6,7 @@ public class GameplayUIManager : MonoBehaviour
     public static GameplayUIManager _instance;
     public GameObject[] uIScreens;
     public GameObject databaseManager;
-
+    public GameObject nightVisionUI;
     public Slider loadingBar;
     private void Awake()
     {
@@ -64,7 +64,13 @@ public class GameplayUIManager : MonoBehaviour
     {
         //OpenUIScreen(0);
     }
+    public void ToggleNightVision() {
 
+        if (nightVisionUI != null) {
+
+            nightVisionUI.SetActive(!nightVisionUI.activeSelf);
+        }
+    }
     private void OpenUIScreen(int screenNumber)
     {
         for (int i = 0; i < uIScreens.Length; i++)

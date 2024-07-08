@@ -11,13 +11,14 @@ public class GameManager : MonoBehaviourPunCallbacks
 
   //  public GameObject redPlayerPrefab;
    // public GameObject bluePlayerPrefab;
-    public GameObject pauseCanvas;
-    public bool paused = false;
+   // public GameObject pauseCanvas;
+    //public bool paused = false;
+
 
     private void Start()
     {
         //set paused state
-        SetPaused();
+        //SetPaused();
 
         //check that we dont have a local instance before we instantiate the prefab
         if (NetworkPlayerManager.localPlayerInstance == null)
@@ -55,14 +56,13 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            paused = !paused;
-            SetPaused();
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0)) {
+
+            GameplayUIManager._instance.ToggleNightVision();
         }
     }
 
-    void SetPaused()
+    /*void SetPaused()
     {
         //set the canvas
         pauseCanvas.SetActive(paused);
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviourPunCallbacks
        // Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
         //set the cursoro visible
       //  Cursor.visible = paused;
-    }
+    }*/
 
     //reload the level when anyone leaves or joins?- That is done in the demo but is it needed?
     public override void OnPlayerEnteredRoom(Player newPlayer)

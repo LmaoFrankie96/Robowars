@@ -5,7 +5,6 @@ public class GameplayUIManager : MonoBehaviour
 {
     public static GameplayUIManager _instance;
     public GameObject[] uIScreens;
-    public GameObject splashManager;
     public GameObject databaseManager;
 
     public Slider loadingBar;

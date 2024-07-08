@@ -3688,15 +3688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 319b3086e9f3f324c889547aa6369326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIScreens:
-  - {fileID: 1081555332}
-  - {fileID: 349087827}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 975870381}
-  splashManager: {fileID: 0}
+  loginScreen: {fileID: 1081555332}
+  registerScreen: {fileID: 349087827}
 --- !u!1 &1176331561
 GameObject:
   m_ObjectHideFlags: 0

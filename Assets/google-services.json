@@ -1,21 +1,22 @@
 {
   "project_info": {
-    "project_number": "6867096629",
-    "project_id": "robowars-9e51d",
-    "storage_bucket": "robowars-9e51d.appspot.com"
+    "project_number": "819344534409",
+    "firebase_url": "https://robosoccer-4baf9-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "robosoccer-4baf9",
+    "storage_bucket": "robosoccer-4baf9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:6867096629:android:5dfce4b20211cd15c28d7c",
+        "mobilesdk_app_id": "1:819344534409:android:f6f970e803e63952800f58",
         "android_client_info": {
-          "package_name": "com.DefaultCompany.Robowars"
+          "package_name": "com.DefaultCompany.robowars"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBiDtOx1LI_PpLJhBt8EW4V3Ew1pF8gN2Q"
+          "current_key": "AIzaSyAbZhh-q_Ya7D4-0DkawU3AsFGjzE5Y6vE"
         }
       ],
       "services": {

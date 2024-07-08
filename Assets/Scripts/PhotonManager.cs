@@ -3,11 +3,15 @@ using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEditor;
 using ExitGames.Client.Photon;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
+    [Header("When building the game change the  test_noOfPlayersToJoin ")]
+    [Header("to 1 and change the condition online no 120 and uncomment teh text ")] 
+    [Header("also chang double equal to TO greater than or equal to")]
     public int test_noOfPlayersToJoin = 1;
     public int noOfPlayersToJoin = 4;
 
@@ -114,7 +118,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         Debug.Log($"Team 0 count is: {team0Count}");
         Debug.Log($"Team 1 count is: {team1Count}");
 
-        if (team0Count >= test_noOfPlayersToJoin && team1Count >= test_noOfPlayersToJoin)
+        //Change this when shipping to them 
+        if (team0Count == test_noOfPlayersToJoin )//  && team1Count >= test_noOfPlayersToJoin)
         {
             Debug.Log("Both Teams ready. Loading gameplay!");
             PhotonNetwork.LoadLevel(2);

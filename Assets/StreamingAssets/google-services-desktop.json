@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "6867096629",
+    "project_id": "robowars-9e51d",
+    "storage_bucket": "robowars-9e51d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6867096629:android:5dfce4b20211cd15c28d7c",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.Robowars"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiDtOx1LI_PpLJhBt8EW4V3Ew1pF8gN2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,6 +5,8 @@ using Firebase.Database;
 using TMPro;
 using System.Collections;
 using System.Threading.Tasks;
+using static AuthManager;
+using UnityEngine.SceneManagement;
 
 public class AuthManager : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class AuthManager : MonoBehaviour
     public FirebaseAuth auth;
     public FirebaseUser User;
     public DatabaseReference databaseReference;
+    [SerializeField]
+    public static string userId_str;
 
     //Login variables
     [Header("Login")]
@@ -31,7 +35,11 @@ public class AuthManager : MonoBehaviour
     public TMP_Text warningRegisterText;
     [SerializeField]
     private TMP_InputField _nameText;
-    
+
+
+    //  [Space(10)]
+
+
     private void Awake()
     {
         //Check that all of the necessary dependencies for Firebase are present on the system
@@ -107,13 +115,21 @@ public class AuthManager : MonoBehaviour
         }
         else
         {
+            // USER>DISPLAY NAME
             //User is now logged in
             //Now get the result
             User = LoginTask.Result.User;
+
+            Debug.Log("Result.User xxxx " + User.UserId);
+            userId_str = User.UserId;
+
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
-            UiManager._instance.ShowSplashScreen();
+            // UiManager._instance.ShowSplashScreen();
+
+            // FOR TESTING 
+            SceneManager.LoadSceneAsync(1);
         }
     }
 
@@ -202,7 +218,8 @@ public class AuthManager : MonoBehaviour
     }
     IEnumerator AddFieldInDb(string field)
     {
-        if (field != null || field !="") {
+        if (field != null || field != "")
+        {
             var dbTask = databaseReference.Child("users").Child(User.UserId).Child("name").SetValueAsync(field);
             yield return new WaitUntil(predicate: () => dbTask.IsCompleted);
             if (dbTask.Exception != null)
@@ -215,5 +232,5 @@ public class AuthManager : MonoBehaviour
             }
         }
     }
-   
+
 }

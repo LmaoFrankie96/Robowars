@@ -764,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20422223, y: 0.36900002}
   m_AnchorMax: {x: 0.7874723, y: 0.42000002}
-  m_AnchoredPosition: {x: 0.39138794, y: -0.5}
+  m_AnchoredPosition: {x: 0.39135742, y: -0.5}
   m_SizeDelta: {x: 13.406006, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1491573866
@@ -1237,6 +1237,10 @@ MonoBehaviour:
   countText: {fileID: 1491573866}
   teamABtn: {fileID: 1123912411}
   teamBBtn: {fileID: 104260833}
+  loadingScreen: {fileID: 1585090493}
+  timeLeft: 100
+  timerText: {fileID: 0}
+  playerPrefab: {fileID: 894193658360001214, guid: 03746300a1e04a04487a7698096e44e3, type: 3}
 --- !u!4 &2121833370
 Transform:
   m_ObjectHideFlags: 0

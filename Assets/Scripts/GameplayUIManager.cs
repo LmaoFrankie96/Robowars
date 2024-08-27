@@ -58,7 +58,7 @@ public class GameplayUIManager : MonoBehaviour
     {
         
         databaseManager.SetActive(true);
-        OpenUIScreen(4);
+        OpenUIScreen(3);
     }
     private void OnDisable()
     {

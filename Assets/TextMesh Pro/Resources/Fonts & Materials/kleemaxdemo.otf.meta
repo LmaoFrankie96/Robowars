@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1c0be5a001eaac74ab2a0f46b332ea00
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Kleemax DEMO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 03ff8aad4c585434192ed7da2cc0c70d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

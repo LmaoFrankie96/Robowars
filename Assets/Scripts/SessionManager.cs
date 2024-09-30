@@ -35,7 +35,7 @@ public class SessionManager : MonoBehaviour
     // Coroutine to run the timer every second    
     private IEnumerator RunTimer()
     {
-        for (int i = 0; i < roundCount; i++)
+        for (int i = 1; i <= roundCount; i++)
         {
             timerRunning = true;
 
@@ -52,6 +52,10 @@ public class SessionManager : MonoBehaviour
             // Timer has finished
             Debug.Log("Timer Finished!");
             timerRunning = false;
+            if (i <= roundCount)
+            {
+                elapsedTime = 0;
+            }
         }
         StopGame();
     }

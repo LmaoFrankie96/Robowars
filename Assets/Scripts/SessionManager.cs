@@ -10,7 +10,7 @@ public class SessionManager : MonoBehaviour
 
     // Internal variable to track elapsed time
     private int elapsedTime = 0;
-
+    private int roundCount = 3;
     // Boolean to check if the timer is running
     private bool timerRunning = false;
 
@@ -35,21 +35,25 @@ public class SessionManager : MonoBehaviour
     // Coroutine to run the timer every second    
     private IEnumerator RunTimer()
     {
-        timerRunning = true;
-
-        while (elapsedTime < timerDuration)
+        for (int i = 0; i < roundCount; i++)
         {
-            yield return new WaitForSeconds(1f); // Wait for 1 second
-            elapsedTime++;
-            Debug.Log("Elapsed Time: " + elapsedTime);
+            timerRunning = true;
 
-            // Do something when the time increments, if needed
-            timerText.text = (timerDuration - elapsedTime).ToString();
+            while (elapsedTime < timerDuration)
+            {
+                yield return new WaitForSeconds(1f); // Wait for 1 second
+                elapsedTime++;
+                Debug.Log("Elapsed Time: " + elapsedTime);
+
+                // Do something when the time increments, if needed
+                timerText.text = (timerDuration - elapsedTime).ToString();
+            }
+
+            // Timer has finished
+            Debug.Log("Timer Finished!");
+            timerRunning = false;
         }
-
-        // Timer has finished
-        Debug.Log("Timer Finished!");
-        StopTimer();
+        StopGame();
     }
 
     // Function to start the timer
@@ -67,14 +71,15 @@ public class SessionManager : MonoBehaviour
     }
 
     // Function to stop the timer if needed
-    public void StopTimer()
+    public void StopGame()
     {
         StopCoroutine(RunTimer());
-        timerRunning = false;
+        //timerRunning = false;
         settingsUi.SetActive(true);
     }
 
-    public bool TimerRunning() {
+    public bool TimerRunning()
+    {
 
         return timerRunning;
     }

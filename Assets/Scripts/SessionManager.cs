@@ -87,4 +87,8 @@ public class SessionManager : MonoBehaviour
 
         return timerRunning;
     }
+    public void CloseGame() {
+
+        Application.Quit();
+    }
 }

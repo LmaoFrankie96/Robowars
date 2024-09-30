@@ -151,10 +151,11 @@ public class SessionManager : MonoBehaviour
             //Debug.Log("Elapsed Time: " + elapsedTime);
 
             // Do something when the time increments, if needed
-            nextRoundTimeText.text = "NEXT ROUND IN \n"+(nextTimerDuration - nextTimerElapsed).ToString();
+            nextRoundTimeText.text = "NEXT ROUND IN \n\n"+(nextTimerDuration - nextTimerElapsed).ToString();
         }
         nextTimerElapsed = 0;
         nextRoundTimeText.enabled = false;
+        nextRoundTimeText.text = "NEXT ROUND IN \n\n5";
         StopCoroutine(NextRoundTimer());
     }
     private IEnumerator EndRoundSequence() {
